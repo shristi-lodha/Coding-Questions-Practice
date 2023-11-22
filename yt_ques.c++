@@ -184,7 +184,9 @@ here-     1 repeat=3--
 //     cout<<"Enter size :";
 //     cin>>size;
 //     int arr[size];
-//     cout<<"Enter Elements :#include<iostream>
+//     cout<<"Enter Elements :";
+
+//#include<iostream>
 // using namespace std;
 // int main(){
 //     int size;
@@ -300,40 +302,323 @@ last occurence of 3 is => 3 index
 
 //Q.7)Find Common element in arrays i.e. Intersection
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-int main(){
-int size1,size2;
-cout<<"Enter size1 :";
-cin>>size1;
+// int main(){
+// int size1,size2;
+// cout<<"Enter size1 :";
+// cin>>size1;
 
-int arr1[size1];
+// int arr1[size1];
 
-int k=0;
-int newarr[size1];
+// int k=0;
+// int newarr[size1];
 
-for(int i=0;i<size1;i++){
-    cin>>arr1[i];
-}
-cout<<"Enter size2 :";
-cin>>size2;
-int arr2[size2];
-for(int i=0;i<size2;i++){
-    cin>>arr2[i];
-}
-for(int i=0;i<size1;i++){
-    for(int j=0;j<size2;j++){
-        if(arr1[i]==arr2[j]){
-            newarr[k]=arr1[i];
-            k++;
-        }
-    }
-}
-cout<<"In two Arrays the Common elements are :{ ";
-for(int i=0;i<k;i++){
-    cout<<newarr[i]<<", ";
-}
-cout<<"}"<<endl;
-    return 0;
-}
+// for(int i=0;i<size1;i++){
+//     cin>>arr1[i];
+// }
+// cout<<"Enter size2 :";
+// cin>>size2;
+// int arr2[size2];
+// for(int i=0;i<size2;i++){
+//     cin>>arr2[i];
+// }
+// for(int i=0;i<size1;i++){
+//     for(int j=0;j<size2;j++){
+//         if(arr1[i]==arr2[j]){
+//             newarr[k]=arr1[i];
+//             k++;
+//         }
+//     }
+// }
+// cout<<"In two Arrays the Common elements are :{ ";
+// for(int i=0;i<k;i++){
+//     cout<<newarr[i]<<", ";
+// }
+// cout<<"}"<<endl;
+//     return 0;
+// }
+
+
+//Q.8) Find Duplicate Number in array in c++
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int size;
+//     cout<<"Enter size :";
+//     cin>>size;
+//     int arr[size];
+//     int newarr[]={0};
+//     cout<<"Enter Elements :";
+//     for(int i=0;i<size;i++){
+//         cin>>arr[i];
+//     }
+   
+//     int index=0;
+//     for(int i=0;i<size-1;i++){
+//     for(int j=i+1;j<size;j++){
+//         if(arr[i]==arr[j]){
+       
+//         cout<<arr[i]<<",";
+//         //  newarr[index]=arr[i];
+//           index++;
+//         }
+     
+//     }
+//     }
+//     // cout<<"duplicate element in array is :{";
+//     // // for(int i=0;i<index;i++){
+//     // //     cout<<newarr[i]<<",";
+//     // // }
+//     // cout<<"}"<<endl;
+//     return 0;
+// }
+
+
+
+//Q.9) Do Alternate Swap
+/*
+ex- 1 2 3 4 5 6
+    2 1 4 3 6 5
+*/
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int size;
+//     cout<<"Enter Size :";
+//     cin>>size;
+//     int arr[size];
+//     int temp;
+//     cout<<"Enter Elements :"<<endl;
+//     for(int i=0;i<size;i++){
+//         cin>>arr[i];
+//     }
+//     for(int i=0;i<size-1;i+=2){
+//         temp=arr[i];
+//         arr[i]=arr[i+1];
+//         arr[i+1]=temp;
+//     }
+//     cout<<"After Alternate Swap the Array is : {";
+//     for(int i=0;i<size;i++){
+//         cout<<arr[i]<<",";
+//     }
+//     cout<<"}";
+//     return 0;
+// }
+
+
+//Q.10)Linear Search-
+
+// #include<iostream>
+// using namespace std;
+// int linearSearch(int arr[],int size){
+//      int search;
+//     cout<<"Enter the element to search in an array :";
+//     cin>>search;
+//     for(int i=0;i<size;i++){
+//         if(arr[i]==search){
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+// int main(){
+//     int size;
+//     cout<<"Enter Size :";
+//     cin>>size;
+//     int arr[size];
+//     cout<<"Enter Elements :"<<endl;
+//     for(int i=0;i<size;i++){
+//         cin>>arr[i];
+//     }
+//    int result=linearSearch(arr,size);
+//    cout<<"The search element is found at index : "<<result<<endl;
+//     return 0;
+// }
+
+//Q.11) Book Allocation-
+/*
+m = 2 student, n=4
+array - 10 20 30 40 ->these is array of books where 10 denotes 10 pages 20 is 20 pages
+atleast one student get a book
+10 | 20 30 40 => 10 ,90
+10 20 | 30 40 => 30 ,70
+10 20 30 | 40 => 60, 40
+max in (10,90),(30,70),(60,40)= 90,70,60
+min(90,70,60)=60 is our output
+
+*/
+
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+//     int size;
+//     cout<<"Enter Size :";
+//     cin>>size;
+//     int arr[size];
+//     cout<<"Enter Elements :"<<endl;
+//     for(int i=0;i<size;i++){
+//         cin>>arr[i];
+//     }
+//     int m;
+//     cout<<"Enter Student :";
+//     cin>>m;
+//     int temp1,temp2=0;
+//     int newarr[size-1];
+//     int index=0;
+//     int min=INT16_MAX;
+//     for(int i=0;i<=size-m;i++){
+//         temp1=arr[i];
+//         for(int j=i-1;j>=0;j--){
+//                 temp1+=arr[j];
+//         }
+//         for(int k=i+1;k<size;k++){
+//             temp2+=arr[k];
+//         }
+//         if(temp1>temp2){
+//             // cout<<temp1<<" "<<temp2<<endl;
+// newarr[index]=temp1;
+// index++;
+//         }else{
+//             //   cout<<temp1<<" "<<temp2<<endl;
+//             newarr[index]=temp2;
+//             index++;
+//         }
+//         temp1=0;
+//         temp2=0;
+//     }
+// for(int i=0;i<index;i++){
+//     if(newarr[i]<min){
+//         min=newarr[i];
+//     }
+// }
+// cout<<"THe result  is :"<<min<<endl;
+//     return 0;
+// }
+/*
+5 4
+25 46 28 49 24
+*/
+// #include<iostream>
+// using namespace std;
+// int findpages(int arr[],int size,int m){
+// int temp1,temp2=0;
+//     int newarr[size-1];
+//     int index=0;
+//     int min=INT16_MAX;
+//     for(int i=0;i<=size-m;i++){
+//         temp1=arr[i];
+//         for(int j=i-1;j>=0;j--){
+//                 temp1+=arr[j];
+//         }
+//         for(int k=i+1;k<size(m-2);k++){
+//             temp2+=arr[k];
+//         }
+//         if(temp1>temp2){
+//             // cout<<temp1<<" "<<temp2<<endl;
+// newarr[index]=temp1;
+// index++;
+//         }else{
+//             //   cout<<temp1<<" "<<temp2<<endl;
+//             newarr[index]=temp2;
+//             index++;
+//         }
+//         temp1=0;
+//         temp2=0;
+//     }
+// for(int i=0;i<index;i++){
+//     if(newarr[i]<min){
+//         min=newarr[i];
+//     }
+// }
+// }
+// int main(){
+//     int size;
+//     cout<<"Enter Size :";
+//     cin>>size;
+//     int arr[size];
+//     cout<<"Enter Elements :"<<endl;
+//     for(int i=0;i<size;i++){
+//         cin>>arr[i];
+//     }
+//     int m;
+//     cout<<"Enter Student :";
+//     cin>>m;
+//     int res=findpages(arr,size,m);
+// cout<<"THe result  is :"<<res<<endl;
+//     return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+// #include <bits/stdc++.h> 
+// using namespace std;
+// void reverseArray(vector<int> &arr , int m)
+// {
+// 	// Write your code here.
+// 	int size=sizeof(arr)/sizeof(arr[0]);
+// 	int temp;
+//     cout<<size<<endl;
+// int a =size-1;
+// 	for(int i=m+1;i<size-1;i++){
+//           if (i < a) {
+//             temp = arr[i];
+//             arr[i] = arr[a];
+//             arr[a] = temp;
+//             a--;
+//           }else{
+// 			  break;
+// 		  }
+//         }
+//         for(int i=0;i<size;i++){
+//             cout<<arr[i]<<" ";
+//         }
+// }
+// int main(){
+//     int arr[]={10,9,8,7,6};
+//     reverseArray(<int>arr,2);
+//     return 0;
+// }
+
+
+//Q.15) 2-D Matrix Largest row Sum-
+// #include<iostream>
+// using namespace std;
+// int main(){
+// int arr[3][3]={0,1,0,
+//                1,0,0,
+//                1,0,0
+//                };
+//                int newarr[3]={0};
+// for(int i=0;i<3;i++){
+//     for(int j=0;j<3;j++){
+//      newarr[i]+=arr[i][j];
+//     }
+// }
+// int max=0; 
+// int index=0;
+// for(int i=0;i<3;i++){
+//     if(max<newarr[i]){
+//         max=newarr[i];
+//         index=i;
+//     }
+// }
+// cout<<max<<endl;
+// cout<<"The row is :{";
+// for(int i=0;i<3;i++){
+//     cout<<arr[index][i]<<" ";
+// }
+// cout<<"}";
+//     return 0;
+// }
+
+
