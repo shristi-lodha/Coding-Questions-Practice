@@ -47,54 +47,90 @@
 
 
 //Q.2) Find total Set Bits in two Input-
+// #include<stdio.h>
+
+// int main(){
+//     int a,b;
+//     printf("Enter two Input :");
+//     scanf("%d %d",&a,&b);
+//     int temparr1[40],temparr2[40];
+//     int index1=0;
+//     int index2=0;
+    
+//     while(a>=1){
+//        temparr1[index1]=a%2;
+//     a=a/2;
+//     index1++;
+//     }
+//     int last1=index1-1;
+//     while(b>=1){
+//        temparr2[index2]=b%2;
+//     b=b/2;
+//     index2++;
+//     }
+//     int last2=index2-1;
+//     int arr1[40],arr2[40];
+// for(int i=0;i<index1;i++){
+//     arr1[i]=temparr1[last1];
+//     last1--;
+// }
+// for(int i=0;i<index2;i++){
+//     arr2[i]=temparr2[last2];
+//     last2--;
+// }
+// int m,n=0;
+// int count=0;
+// while(m<index1 || n<index2){
+//     if(arr1[m]==1){
+// count++;
+
+//     }else {
+
+//     }
+//     if(arr2[n]==1){
+//         count++;
+//     }else{
+        
+//     }
+//     m++;
+//     n++;
+// }
+// printf("The Number of Set Bits are :%d",count);
+//     return 0;
+// }
+
+
+//Write a program to reverse a given string.
 #include<stdio.h>
 
 int main(){
-    int a,b;
-    printf("Enter two Input :");
-    scanf("%d %d",&a,&b);
-    int temparr1[40],temparr2[40];
-    int index1=0;
-    int index2=0;
-    
-    while(a>=1){
-       temparr1[index1]=a%2;
-    a=a/2;
-    index1++;
-    }
-    int last1=index1-1;
-    while(b>=1){
-       temparr2[index2]=b%2;
-    b=b/2;
-    index2++;
-    }
-    int last2=index2-1;
-    int arr1[40],arr2[40];
-for(int i=0;i<index1;i++){
-    arr1[i]=temparr1[last1];
-    last1--;
-}
-for(int i=0;i<index2;i++){
-    arr2[i]=temparr2[last2];
-    last2--;
-}
-int m,n=0;
-int count=0;
-while(m<index1 || n<index2){
-    if(arr1[m]==1){
-count++;
+          int size,i,j,k=0,p;
+          printf("enter the size of the string :");
+          scanf("%d",&size);
 
-    }else {
+          char arr[100];
+          printf("enter the string:");
+          for(i=0;i<size;i++){
+            scanf("%c",&arr[i]);
+          }
+          arr[i]=' ';
+          for(j=i-1;j>=0;j--){
+            if(arr[j]==' '){
+               p=j+1;
+               while(arr[p]!=' '){
+                printf("%c",arr[k]);
+               p++;
+               k++;
+               }
+               printf("%c",arr[k]);
+            }
 
-    }
-    if(arr2[n]==1){
-        count++;
-    }else{
-        
-    }
-    m++;
-    n++;
-}
-printf("The Number of Set Bits are :%d",count);
-    return 0;
+          }
+          p=j+1;
+          while(arr[p]!=' '){
+            printf("%c",arr[k]);
+            p++;
+            k++;
+          }
+           return 0;
 }
